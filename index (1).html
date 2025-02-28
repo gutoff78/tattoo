@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos dar um beijin?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .image-container img {
+            width: 250px;
+            /* Ajuste o tamanho da imagem */
+            height: 250px;
+            border-radius: 50%;
+            /* Deixa a imagem redonda */
+            object-fit: cover;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-yes {
+            background-color: green;
+            color: white;
+        }
+
+        .btn-no {
+            background-color: red;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="Captura de tela 2025-02-28 113905.png" alt="Minha Foto">
+    </div>
+    <h1>Vamos dar um beijin?</h1>
+    <div class="btn-container">
+        <button class="btn btn-yes" onclick="alert('Boa escolha! 😘')">Sim</button>
+        <button class="btn btn-no" id="noBtn">Não</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+
+        function moveButton() {
+            const maxX = window.innerWidth - noBtn.clientWidth - 20;
+            const maxY = window.innerHeight - noBtn.clientHeight - 20;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        }
+
+        noBtn.addEventListener("mouseenter", moveButton);
+        noBtn.addEventListener("touchstart", moveButton);
+    </script>
+</body>
+
+</html>
